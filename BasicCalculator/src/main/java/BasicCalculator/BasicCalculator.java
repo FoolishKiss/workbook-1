@@ -34,20 +34,42 @@ public class BasicCalculator {
         // Result
         int result = 0;
 
+        // shows operator symbol
+        String operator = "";
+
+
         // operations when chose
         if (userOption.equals("A")) {
-            result = num1 + num2;
+            operator = "+";
+            result = addNum(num1, num2);
+        } else if (userOption.equals("S")) {
+            operator = "-";
+            result = subtractNum(num1, num2);
+        } else if (userOption.equals("M")) {
+            operator = "*";
+            result = multiplyNum(num1, num2);
+        } else if (userOption.equals("D")) {
+            operator = "/";
+            result = divideNum(num1, num2);
         }
-        else if (userOption.equals("S")) {
-            result = num1 - num2;
-        }
-        else if (userOption.equals("M")) {
-            result = num1 * num2;
-        }
-        else if (userOption.equals("D")) {
-            result = num1 / num2;
-        }
-        System.out.println(result);
+        // print out answer for user
+        System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
 
+    }
+    // function for *
+    public static  int multiplyNum(int num1, int num2){
+        return num1 * num2;
+    }
+    // function for +
+    public static  int addNum(int num1, int num2){
+        return num1 + num2;
+    }
+    // function for -
+    public static  int subtractNum(int num1, int num2){
+        return num1 - num2;
+    }
+    // function for /
+    public static  int divideNum(int num1, int num2){
+        return num1 / num2;
     }
 }
